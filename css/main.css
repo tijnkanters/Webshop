@@ -1,1 +1,46 @@
-@CHARSET "ISO-8859-1";
+.block {
+   min-height: 500px;
+}
+
+body {
+    padding-top: 70px;
+}
+
+.cursor-pointer {
+   cursor:pointer;
+}
+
+.navbar-default {
+    background-image: none;
+    background-color: #66ccff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+}
+
+.footer {
+    margin-top: 10px;
+    background-color: #66ccff;
+    padding-top: 5px;
+    color: #fff;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.navbar-brand {
+    padding-top: 5px;
+}
+
+
+section {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
