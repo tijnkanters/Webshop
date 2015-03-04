@@ -13,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/Webshop/index.php"><img src="" height="100px" width="100px"></a>
+            <a class="navbar-brand" href="/Webshop/index.php"><img src="/Webshop/img/LogoWebshop.png" height="50px" width="50px"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,7 +21,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/Webshop/index.php">Home</a></li>
                 <li><a href="/Webshop/pages/shop.php">Shop</a></li>
-                <li><a href="/Webshop/pages/contact.php">Contact</a></li>
+                <li><a href="/Webshop/pages/about.php">About</a></li>
             </ul>
 
         </div><!-- /.navbar-collapse -->

@@ -2,7 +2,15 @@
 <body>
 <?php include_once 'header.php'; ?>
 
-Shop
+<div class="block">
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-4 col-md-offset-2">
+                <h1>Shop</h1>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <?php include_once 'footer.php'; ?>
