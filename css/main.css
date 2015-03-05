@@ -1,5 +1,10 @@
 .block {
    min-height: 500px;
+
+}
+
+.container {
+	padding-bottom: 100px;
 }
 
 body {

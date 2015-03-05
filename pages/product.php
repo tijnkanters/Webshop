@@ -2,18 +2,19 @@
 <body>
 <?php include_once 'header.php'; ?>
 
+<?php include_once '../class/product.inc.php'; ?>
+
 <div class="block">
     <div class="container">
     	<div class="row">
-    		<div class="col-md-4 col-md-offset-2">
-                <h1>Fietsbel</h1>
-                <h3>Herenmodel</h3>
-                <img src="/Webshop/img/zilverfietsbel.jpg">
+    		<div class="col-md-8 col-md-offset-2">
+                <h1><?php echo $name?></h1>
+                <h3><?php echo $catagory?>model</h3>
+                <img src="<?php echo $img?>">
                 <p>
-                Een stijlvolle klassieker met nostalgische invloeden. 
-                Deze zilvere fietsbel is helemaal in de mode op iedere nieuwe herenfiets.
+                <?php echo $desc?>
                 </p>
-                <h2>&euro;7,95
+                <h2>&euro;<?php echo $price?>
                 
                 <button name="order" type="submit" class="btn btn-info pull-right ">In winkelwagen</button>
                 </h2>
