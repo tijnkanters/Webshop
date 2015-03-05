@@ -23,7 +23,11 @@
                 <li><a href="/Webshop/pages/shop.php">Shop</a></li>
                 <li><a href="/Webshop/pages/about.php">About</a></li>
             </ul>
-
+			<ul class="nav navbar-nav navbar-right">
+                <li><a href="/Webshop/pages/register.php">Registreren</a></li>
+                <li><a href="/Webshop/pages/login.php">Inloggen</a></li>
+            </ul>
+            
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
