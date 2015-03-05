@@ -6,7 +6,7 @@
     <div class="container">
     	<div class="row">
     		<div class="col-md-4 col-md-offset-2">
-                <h1>Login</h1>
+                <h1>Inloggen</h1>
             </div>
         </div>
                 <form class="form-horizontal" action="contactform.php" method="post">
