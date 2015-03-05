@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="/Webshop/index.php">Home</a></li>
-                <li><a href="/Webshop/pages/shop.php">Shop</a></li>
+                <li><a href="/Webshop/pages/catagory.php">Shop</a></li>
                 <li><a href="/Webshop/pages/about.php">About</a></li>
             </ul>
 			<ul class="nav navbar-nav navbar-right">
