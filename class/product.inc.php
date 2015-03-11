@@ -1,4 +1,4 @@
-<?php include_once '../class/databaseconnect.php'; ?>
+<?php include_once '/class/databaseconnect.php'; ?>
 <?php 
 $sql = "SELECT p.idProduct, p.Naam, p.Beschrijving, p.Prijs, p.Afbeelding, c.Naam as Catagorie FROM trkanter_db.product AS p
 		JOIN trkanter_db.categorie AS c on p.Categorie_idCategorie = c.idCategorie;";

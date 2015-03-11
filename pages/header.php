@@ -20,6 +20,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="/Webshop/index.php">Home</a></li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shop <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -28,11 +29,23 @@
                         <li><a href="/Webshop/pages/shop.php">Kinderen</a></li>
                     </ul>
                 </li>
+
                 <li><a href="/Webshop/pages/about.php">About</a></li>
             </ul>
 			<ul class="nav navbar-nav navbar-right">
-                <li><a href="/Webshop/pages/register.php">Registreren</a></li>
-                <li><a href="/Webshop/pages/login.php">Inloggen</a></li>
+                <?php
+                session_start();
+
+                if($_SESSION['logged_in'] = true && isset($_SESSION['gebruiker']))
+                {
+                    echo "<li><a href='/Webshop/pages/register.php'><b>Welkom ". $_SESSION['gebruiker']."</b></a></li>";
+                    echo "<li><a href='/Webshop/pages/uitloggen.php'>Uitloggen</a></li>";
+                }
+                else
+                {
+                    echo "<li><a href='/Webshop/pages/register.php'>Registreren</a></li><li><a href='/Webshop/pages/login.php'>Inloggen</a></li>";
+                }
+                ?>
             </ul>
             
         </div><!-- /.navbar-collapse -->

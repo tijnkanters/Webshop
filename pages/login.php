@@ -9,17 +9,17 @@
                 <h1>Inloggen</h1>
             </div>
         </div>
-                <form class="form-horizontal" action="contactform.php" method="post">
+                <form class="form-horizontal" action="login_validator.php" method="post">
             <div class="form-group">
-                <label for="email" class="col-md-2 control-label">Gebruikersnaam</label>
+                <label for="username" class="col-md-2 control-label">Gebruikersnaam</label>
                 <div class="col-md-4">
-                    <input name="username" type="email" class="form-control" id="username">
+                    <input name="user" type="text" class="form-control" id="user">
                 </div>
             </div>
             <div class="form-group">
-                <label for="tel" class="col-md-2 control-label">Wachtwoord</label>
+                <label for="password" class="col-md-2 control-label">Wachtwoord</label>
                 <div class="col-md-4">
-                    <input name="pw" type="password" class="form-control" id="pw">
+                    <input name="pass" type="password" class="form-control" id="pass">
                 </div>
             </div>
             <div class="form-group">
