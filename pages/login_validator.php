@@ -2,11 +2,7 @@
 // Sessie starten
 session_start();
 
-include_once '/Webshop/class/databaseconnect.php';
-
-// DUMMYDATA
-$sGebruikerControle = 'admin';
-$sWachtwoordControle = 'wachtwoord';
+include_once '../class/databaseconnect.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
@@ -15,7 +11,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $sGebruiker = trim($_POST['user']);
         $sWachtwoord = trim($_POST['pass']);
 
-        if($sGebruiker == $sGebruikerControle && $sWachtwoord == $sWachtwoordControle)
+        $sql = "SELECT g.Wachtwoord FROM trkanter_db.gebruikers AS g WHERE g.Gebruikersnaam = $sGebruiker";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $checkWachtwoord = $row["Wachtwoord"];
+            }
+        }
+
+        $conn->close();
+
+        if($sWachtwoord == $checkWachtwoord)
         {
             $_SESSION['logged_in'] = true;
             $_SESSION['gebruiker'] = $sGebruiker;
@@ -27,6 +35,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             header('Refresh: 3; url=login.php');
             echo 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
+            echo "<br>".$sGebruiker;
+            echo "<br>".$sWachtwoord;
+            echo "<br>".$checkWachtwoord;
         }
     }
     else
