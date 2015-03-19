@@ -2,19 +2,20 @@
 <body>
 <?php include_once 'header.php'; ?>
 
-<?php include_once '../class/product.inc.php'; ?>
+<?php include_once '../class/product.inc.php'; 
+$product = getProduct($_GET['id'], $products)?>
 
 <div class="block">
     <div class="container">
     	<div class="row">
     		<div class="col-md-8 col-md-offset-2">
-                <h1><?php echo $name?></h1>
-                <h3><?php echo $catagory?>model</h3>
-                <img src="<?php echo $img?>">
+                <h1><?php echo $product->name?></h1>
+                <h3><?php echo $product->category?>model</h3>
+                <img src="<?php echo $product->img?>">
                 <p>
-                <?php echo $desc?>
+                <?php echo $product->desc?>
                 </p>
-                <h2>&euro;<?php echo $price?>
+                <h2>&euro;<?php echo $product->price?>
                 
                 <button name="order" type="submit" class="btn btn-info pull-right ">In winkelwagen</button>
                 </h2>
