@@ -12,8 +12,20 @@
         <div class="row">
     		<div class="col-md-6 col-md-offset-2">
                 <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
-                </p>
+                Bij Snelfietsbel.nl koopt u online uw fietsbel. Bij ons in het online 
+                assortiment vind u veel verschillende soorten fietsbellen. We hebben witte fietsbellen, 
+                rode fietsbellen, blauwe fietsbellen en ga zo maar door! Bij ons kunt u ook fietsbellen 
+                vinden met een leuke tekst erop. Alle fietsbellen die u bij ons online kunt kopen zijn 
+                van hoge kwaliteit en zijn laag geprijsd. De merken van fietsbellen die u in ons online 
+                assortiment kunt vinden zijn Widek, Simson, XLC, Cordo, Gazelle, Cateye, Sram, K3 en Kawasaki. 
+                De fietsbellen zijn voor elk soort fiets! 
+<br><br>
+				Kunt u de fietsbel die u zoekt niet vinden? Laat het ons weten! Online uw fietsbel 
+				kopen doet u bij Snelfietsbel.nl!
+				</p>
+				<p>
+				Deze website is gemaakt door Tijn Kanters en Rick van Osta.
+				</p>
             </div>
         </div>
     </div>

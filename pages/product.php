@@ -3,7 +3,7 @@
 <?php include_once 'header.php'; ?>
 
 <?php include_once '../class/product.inc.php'; 
-$product = getProduct($_GET['id'], $products)?>
+$product = getProduct($_GET['id'])?>
 
 <div class="block">
     <div class="container">
@@ -11,7 +11,7 @@ $product = getProduct($_GET['id'], $products)?>
     		<div class="col-md-8 col-md-offset-2">
                 <h1><?php echo $product->name?></h1>
                 <h3><?php echo $product->category?>model</h3>
-                <img src="<?php echo $product->img?>">
+                <img src="/Webshop/img/<?php echo $product->img?>" width="300px" height="300px">
                 <p>
                 <?php echo $product->desc?>
                 </p>

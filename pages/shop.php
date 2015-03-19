@@ -4,25 +4,36 @@
 
 <div class="block">
     <div class="container">
-    	<div class="row">
-    		<div class="col-md-4 col-md-offset-2">
+
+    		<div class="col-md-10-offset-2">
                 <h1>Shop</h1>
+                
                <?php include_once '../class/product.inc.php';
+               $products = array();
+               $products = getProductsByCategory($_GET['category']);
+               if(empty($products)){
+               	echo '<h3>Na erg veel speurwerk hebben we hier geen fietsbellen kunnen vinden.
+                		</h3><p>Er is iets mis gegaan. Klik <a href="/Webshop/index.php">hier</a> om terug te gaan.</p>';
+               }
 				foreach ($products as $p){
+					echo '<div class="col-md-5 productDiv">';
+					echo '<a href="product.php?id=' . $p->id . '">';
+					echo '<br>';
+					echo '<img src="/Webshop/img/' . $p->img . '" style="width: 100px; height: 100px; border:3px solid gray;">';
 					
-					echo $p->name;
-					echo $p->category;
-					echo $p->img;
-					echo $p->desc;
-					echo $p->price;
-					echo '<br><br>';
+					echo '<h3>' . $p->name . '</h3>';
+					
+					echo '<p>' . $p->desc . '</p>';
+					echo '<h4>&euro;' . $p->price . '</h4>';
+					echo '<br>';
+					echo '</a></div>';
 					
 				}
 				?>
             </div>
-        </div>
-    </div>
-</div>
+      </div>
+      </div>
+
 
 
 <?php include_once 'footer.php'; ?>

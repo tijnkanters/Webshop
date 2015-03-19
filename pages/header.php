@@ -24,9 +24,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shop <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/Webshop/pages/shop.php">Heren</a></li>
-                        <li><a href="/Webshop/pages/shop.php">Dames</a></li>
-                        <li><a href="/Webshop/pages/shop.php">Kinderen</a></li>
+                        <li><a href="/Webshop/pages/shop.php?category=1">Heren</a></li>
+                        <li><a href="/Webshop/pages/shop.php?category=2">Dames</a></li>
+                        <li><a href="/Webshop/pages/shop.php?category=3">Kinderen</a></li>
                     </ul>
                 </li>
 
