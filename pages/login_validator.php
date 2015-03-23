@@ -11,14 +11,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $sGebruiker = trim($_POST['user']);
         $sWachtwoord = trim($_POST['pass']);
 
-        $sql = "SELECT g.Wachtwoord FROM trkanter_db.gebruikers AS g WHERE g.Gebruikersnaam = $sGebruiker";
+        $sql = "SELECT g.Wachtwoord FROM trkanter_db.gebruikers AS g WHERE g.Gebruikersnaam = '$sGebruiker'";
         $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
+        if ($result != null && $result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 $checkWachtwoord = $row["Wachtwoord"];
             }
+        }
+        else{
+            echo 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist! (GEBRUIKER NIET GEVONDEN)';
+            echo $conn->error;
+            echo $sql;
+            exit();
         }
 
         $conn->close();
