@@ -3,6 +3,10 @@
 
 }
 
+.navbar-text{
+    font-weight: bold;
+}
+
 .container {
 	padding-bottom: 100px;
 }

@@ -9,27 +9,48 @@
                 <h1>Registreren</h1>
             </div>
         </div>
-        <form class="form-horizontal" action="contactform.php" method="post">
+        <!--            Check of gebruiker al is ingelogd, zo niet check of het formulier (goed) is ingevuld     -->
+        <?php
+        if($_SESSION['logged_in'] = true && isset($_SESSION['gebruiker']))
+        {
+            header('Refresh: 3; url=/Webshop/index.php');
+            echo 'Je bent al ingelogd, om een nieuwe account aan te maken moet je eerst uitloggen.';
+            exit();
+        }
+        else
+        {
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                if($_POST['username'] == "" || $_POST['email'] == "" || $_POST['pw'] == "" || $_POST['pw2'] == ""){
+                    echo "<p class='warning'>Niet alle vereiste velden zijn ingevuld!</p>";
+                }
+                else{
+                    echo "We will succeed";
+                    exit();
+                }
+            }
+        }
+        ?>
+        <form class="form-horizontal" action="register.php" method="post">
             <div class="form-group">
-                <label for="email" class="col-md-2 control-label">Gebruikersnaam</label>
+                <label for="email" class="col-md-2 control-label">Gebruikersnaam*</label>
                 <div class="col-md-4">
-                    <input name="username" type="email" class="form-control" id="username">
+                    <input name="username" type="text" class="form-control" id="username">
                 </div>
             </div>
             <div class="form-group">
-                <label for="tel" class="col-md-2 control-label">E-mail</label>
+                <label for="tel" class="col-md-2 control-label">E-mail*</label>
                 <div class="col-md-4">
                     <input name="email" type="email" class="form-control" id="email">
                 </div>
             </div>
             <div class="form-group">
-                <label for="tel" class="col-md-2 control-label">Wachtwoord</label>
+                <label for="tel" class="col-md-2 control-label">Wachtwoord*</label>
                 <div class="col-md-4">
                     <input name="pw" type="password" class="form-control" id="pw">
                 </div>
             </div>
             <div class="form-group">
-                <label for="tel" class="col-md-2 control-label">Herhaal wachtwoord</label>
+                <label for="tel" class="col-md-2 control-label">Herhaal wachtwoord*</label>
                 <div class="col-md-4">
                     <input name="pw2" type="password" class="form-control" id="pw2">
                 </div>
