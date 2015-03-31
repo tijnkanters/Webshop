@@ -7,8 +7,7 @@
 
 <?php
 
-include '../class/databaseconnect.php';
-
+include_once '../class/databaseconnect.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
