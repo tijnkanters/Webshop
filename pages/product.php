@@ -3,7 +3,12 @@
 <?php include_once 'header.php'; ?>
 
 <?php include_once '../class/product.inc.php'; 
-$product = getProduct($_GET['id'])?>
+$product = getProduct($_GET['id']);
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    array_push($_SESSION['cart'], $_POST['productid']);
+}
+?>
 
 <div class="block">
     <div class="container">
@@ -16,7 +21,10 @@ $product = getProduct($_GET['id'])?>
                 <?php echo $product->desc?>
                 </p>
                 <h2>&euro;<?php echo $product->price?>
-                
+                    <form action="product.php" method="post">
+                        <input name="productid" type="hidden" value="<?php echo $product->id?>" />
+                        <input type="submit" name="submit" value="Add to Cart" />
+                    </form>
                 <button onclick="addProduct()" name="order" type="submit" class="btn btn-info pull-right ">In winkelwagen</button>
                 </h2>
             </div>

@@ -13,6 +13,10 @@
         ?>
         <div class="row">
             Winkelwagentje
+
+            <p>
+                <?php var_dump($_SESSION['cart']); ?>
+            </p>
         </div>
     </div>
 </div>

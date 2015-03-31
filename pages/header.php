@@ -28,6 +28,10 @@
 			<ul class="nav navbar-nav navbar-right">
                 <?php
                 session_start();
+                if(!isset($_SESSION['cart'])){
+                    $_SESSION['cart']=array();
+                }
+
 
                 if($_SESSION['logged_in'] = true && isset($_SESSION['gebruiker']))
                 {
