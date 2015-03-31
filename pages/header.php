@@ -21,24 +21,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/Webshop/index.php">Home</a></li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shop <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                    	<?php 
-
-                    	include_once "/Webshop/class/categorie.inc.php";
-                    	
-                    	$catarray = array();
-                    	$catarray = getCategories();
-                    	foreach ($catarray as $c){
-                    		echo '<li><a href="/Webshop/pages/shop.php?category=' . $c->id . '">' . $c->name . '</a></li>';
-                    		
-                    	}
-                    	
-                    	?>
-                        
-                    </ul>
-                </li>
+                 <li><a href="/Webshop/pages/category.php">Shop</a></li>
 
                 <li><a href="/Webshop/pages/about.php">About</a></li>
             </ul>

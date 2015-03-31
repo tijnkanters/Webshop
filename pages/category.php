@@ -1,3 +1,4 @@
+<?php
 <?php include_once 'head.php'; ?>
 <body>
 <?php include_once 'header.php'; ?>
@@ -11,22 +12,18 @@
         </div>
         <div class="row" style="margin-top:50px;">
     		<div class="col-md-3 col-md-offset-1" >
-                <button name="login" type="submit" class="btn btn-primary " style="width:100%; height:100px; font-size:22px;">Heren</button>
-                
-            </div>
-            
-            
+             <?php 
 
-            <div class="col-md-3">
-                <button name="login" type="submit" class="btn btn-danger " style="width:100%; height:100px; font-size:22px;">Dames</button>
-                
-            </div>
-            
-
-            <div class="col-md-3">
-                <button name="login" type="submit" class="btn btn-warning " style="width:100%; height:100px; font-size:22px;">Kinderen</button>
-
-           
+                    	include_once "/Webshop/class/categorie.inc.php";
+                    	
+                    	$catarray = array();
+                    	$catarray = getCategories();
+                    	foreach ($catarray as $c){
+                    		echo '<li><a href="/Webshop/pages/shop.php?category=' . $c->id . '">' . $c->name . '</a></li>';
+                    		
+                    	}
+                    	
+                    	?>
             </div>
             
             </div>

@@ -17,7 +17,7 @@ $product = getProduct($_GET['id'])?>
                 </p>
                 <h2>&euro;<?php echo $product->price?>
                 
-                <button name="order" type="submit" class="btn btn-info pull-right ">In winkelwagen</button>
+                <button onclick="addProduct()" name="order" type="submit" class="btn btn-info pull-right ">In winkelwagen</button>
                 </h2>
             </div>
         </div>
