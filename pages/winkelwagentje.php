@@ -15,7 +15,20 @@
             Winkelwagentje
 
             <p>
-                <?php var_dump($_SESSION['cart']); ?>
+                <?php 
+                $cart = array();
+                $cart = $_SESSION['cart'];
+                
+                foreach ($cart as $c){
+                echo '<div style="border:2px solid lightgray">';
+                
+                echo '<img src="/Webshop/img/' . $c->img . '" style="width: 100px; height: 100px; border:3px solid gray;">';
+                echo '<br>';
+                echo $c->name;
+                echo $c->price;
+                echo '</div><br>';
+                }
+                 ?>
             </p>
         </div>
     </div>
