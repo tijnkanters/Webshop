@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 class Product {
 	public $id;
 	public $name;
@@ -11,7 +9,7 @@ class Product {
 }
 
 
-function getProductsByCategory($catid){
+function getProductsByCategory($catid, $conn){
 	include 'databaseconnect.php';
 	
 	$products1 = array();
@@ -20,7 +18,6 @@ function getProductsByCategory($catid){
 		JOIN trkanter_db.categorie AS c on p.Categorie_idCategorie = c.idCategorie WHERE c.idCategorie = " . $catid . " ORDER by p.idProduct asc;";
 	
 	$result = $conn->query($sql);
-	
 	
 	if ($result->num_rows > 0) {
 		// output data of each row
@@ -42,7 +39,7 @@ function getProductsByCategory($catid){
 	
 }
 
-function getProduct($id){
+function getProduct($id, $conn){
 	include 'databaseconnect.php';
 	
 	$products2 = array();
@@ -74,7 +71,5 @@ function getProduct($id){
 			return $p;
 		}
 	}
-	
 }
-
 ?>

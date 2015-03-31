@@ -1,4 +1,3 @@
-
 <?php
 class Categorie {
 	public $id;
