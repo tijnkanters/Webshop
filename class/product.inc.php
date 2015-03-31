@@ -13,7 +13,7 @@ class Product {
 
 
 function getProductsByCategory($catid){
-	include_once 'databaseconnect.php';
+	include 'databaseconnect.php';
 	
 	$products1 = array();
 	
@@ -44,7 +44,7 @@ function getProductsByCategory($catid){
 }
 
 function getProduct($id){
-	include_once 'databaseconnect.php';
+	include 'databaseconnect.php';
 	
 	$products2 = array();
 	

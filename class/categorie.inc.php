@@ -6,7 +6,7 @@ class Categorie {
 }
 
 function getCategories(){
-require_once 'databaseconnect.php';
+include 'databaseconnect.php';
 
 $categories = array();
 
