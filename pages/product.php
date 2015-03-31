@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php echo $product->desc?>
                 </p>
                 <h2>&euro;<?php echo $product->price?>
-                    <form action="product.php" method="post">
+                    <form action="product.php?id=<?php echo $product->id?>" method="post">
                         <input name="productid" type="hidden" value="<?php echo $product->id?>" />
                         <input type="submit" name="submit" value="Add to Cart" />
                     </form>
