@@ -6,7 +6,17 @@
 <?php
 if(isset($_REQUEST['add']))
 {
-	select();
+	addCategorie();
+}
+
+function addCategorie($naam){
+	include 'databaseconnect.php';
+	
+	$sql = "INSERT INTO trkanter_db.categorie (id, x) VALUES ((SELECT dt.number FROM 
+			(SELECT max(idCategorie)+1 AS number FROM trkanter_db.categorie) 
+			AS dt), '" . $naam . "')";
+	
+	$conn->query($sql);
 }
 
 ?>
