@@ -6,11 +6,11 @@
     <div class="container">
     	<div class="row">
     		<div class="col-md-8 col-md-offset-2">
-                <h1>Selecteer een catagorie:</h1>
+                <h1>Selecteer een categorie:</h1>
             </div>
         </div>
         <div class="row" style="margin-top:50px;">
-    		<div class="col-md-3 col-md-offset-1" >
+    		<div class="col-md-6 col-md-offset-1" >
              <?php 
 
                     	include_once "../class/categorie.inc.php";
@@ -18,7 +18,7 @@
                     	$catarray = array();
                     	$catarray = getCategories();
                     	foreach ($catarray as $c){
-                    		echo '<a href="/Webshop/pages/shop.php?category=' . $c->id . '">' . $c->name . '</a>';
+                    		echo "<a href='/Webshop/pages/shop.php?category=" . $c->id . "'><div class='category'>" . $c->name . "</div></a>";
                     		
                     	}
                     	

@@ -27,9 +27,9 @@
                 $cart = $_SESSION['cart'];
                 
                 foreach ($cart as $c){
-                echo '<div style="border:2px solid lightgray">';
+                echo '<div style="border:2px solid lightgray; height:104px;">';
                 
-                echo '<img src="/Webshop/img/' . $c->img . '" style="width: 100px; height: 100px; border:3px solid gray;">';
+                echo '<img src="/Webshop/img/' . $c->img . '" style="float: left; width: 100px; height: 100px; border:3px solid gray;">';
                 echo '<br>';
                 echo $c->name;
                 echo $c->price;
