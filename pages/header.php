@@ -25,8 +25,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shop <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                     	<?php 
-                    	ini_set('display_errors', 'On');
-                    	error_reporting(E_ALL);
+
                     	$path = $_SERVER['DOCUMENT_ROOT'];
                     	$path .= "/Webshop/class/categorie.inc.php";
                     	include_once($path);
