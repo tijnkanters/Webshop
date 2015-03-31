@@ -7,19 +7,16 @@
         <?php
         if(!isset($_SESSION['gebruiker'])){
             header('Refresh: 3; url=/Webshop/index.php');
-            echo 'Toegang geweigerd!';
-            exit();
-        }
-        if($_SESSION['gebruiker'] != "admin")
-        {
-            header('Refresh: 3; url=/Webshop/index.php');
-            echo 'Toegang geweigerd!';
+            echo 'Je bent nog niet ingelogd';
             exit();
         }
         ?>
-        Beheerpagina Categoriën
+        <div class="row">
+            Winkelwagentje
+        </div>
     </div>
 </div>
+
 
 
 <?php include_once 'footer.php'; ?>

@@ -1,22 +1,22 @@
 <?php include_once 'head.php'; ?>
 <body>
 <?php include_once 'header.php'; ?>
-<?
-session_start();
-//WERKT NOG NIET!
-echo $_SESSION['gebuiker']. " test";
-if($_SESSION['gebruiker'] != "admin")
-{
-    header('Refresh: 3; url=/Webshop/index.php');
-    echo 'Toegang geweigerd!';
-    exit();
-}
-?>
-
-
 
 <div class="block">
     <div class="container">
+        <?php
+        if(!isset($_SESSION['gebruiker'])){
+            header('Refresh: 3; url=/Webshop/index.php');
+            echo 'Toegang geweigerd!';
+            exit();
+        }
+        if($_SESSION['gebruiker'] != "admin")
+        {
+            header('Refresh: 3; url=/Webshop/index.php');
+            echo 'Toegang geweigerd!';
+            exit();
+        }
+        ?>
         Beheerpagina Producten
     </div>
 </div>
