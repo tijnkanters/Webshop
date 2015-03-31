@@ -13,12 +13,12 @@
     		<div class="col-md-3 col-md-offset-1" >
              <?php 
 
-                    	include_once "/Webshop/class/categorie.inc.php";
+                    	include_once "../class/categorie.inc.php";
                     	
                     	$catarray = array();
                     	$catarray = getCategories();
                     	foreach ($catarray as $c){
-                    		echo '<li><a href="/Webshop/pages/shop.php?category=' . $c->id . '">' . $c->name . '</a></li>';
+                    		echo '<a href="/Webshop/pages/shop.php?category=' . $c->id . '">' . $c->name . '</a>';
                     		
                     	}
                     	

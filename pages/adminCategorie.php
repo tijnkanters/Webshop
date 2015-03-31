@@ -2,6 +2,16 @@
 <body>
 <?php include_once 'header.php'; ?>
 
+
+<?php
+if(isset($_REQUEST['add']))
+{
+	select();
+}
+
+?>
+
+
 <div class="block">
     <div class="container">
         <?php
