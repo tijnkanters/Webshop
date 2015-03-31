@@ -35,7 +35,7 @@
 
                 if($_SESSION['logged_in'] = true && isset($_SESSION['gebruiker']))
                 {
-                    echo "<li><a href='/Webshop/pages/winkelwagentje.php'><span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span></a></li>";
+                    echo "<li><a href='/Webshop/pages/winkelwagentje.php'><span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'> (".count($_SESSION['cart']).")</span></a></li>";
                     echo "<p class='navbar-text'>Welkom ". $_SESSION['gebruiker']."</p>";
                     if($_SESSION['gebruiker'] == 'admin'){
                         ?>
@@ -54,6 +54,7 @@
                 {
                     echo "<li><a href='/Webshop/pages/register.php'>Registreren</a></li><li><a href='/Webshop/pages/login.php'>Inloggen</a></li>";
                 }
+                session_write_close();
                 ?>
             </ul>
             

@@ -5,10 +5,17 @@
 <?php include_once '../class/product.inc.php'; 
 $product = getProduct($_GET['id']);
 
+session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    array_push($_SESSION['cart'], $product);
-    echo "<div class='productAdded'>".$product->name." toegevoegd aan de winkelwagen!</div>";
+    if(!isset($_SESSION['gebruiker'])){
+        echo "<div class='noAccess'>Je bent nog niet ingelogd</div>";
+    }
+    else{
+        array_push($_SESSION['cart'], $product);
+        echo "<div class='productAdded'>".$product->name." toegevoegd aan de winkelwagen!</div>";
+    }
 }
+session_write_close();
 ?>
 
 <div class="block">

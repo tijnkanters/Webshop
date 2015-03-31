@@ -49,6 +49,16 @@ body {
     top: 0px;
 }
 
+.noAccess{
+    text-align: center;
+    font-size: 24px;
+    background-color: #ff714f;
+    padding: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    top: 0px;
+}
+
 
 .footer a {
     color: #fff;

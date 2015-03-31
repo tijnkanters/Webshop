@@ -5,6 +5,7 @@
 <div class="block">
     <div class="container">
         <?php
+        session_start();
         if(!isset($_SESSION['gebruiker'])){
             header('Refresh: 3; url=/Webshop/index.php');
             echo 'Toegang geweigerd!';
@@ -16,6 +17,7 @@
             echo 'Toegang geweigerd!';
             exit();
         }
+        session_write_close();
         ?>
         Beheerpagina Producten
     </div>

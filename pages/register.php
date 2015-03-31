@@ -11,6 +11,7 @@
         </div>
         <!--            Check of gebruiker al is ingelogd, zo niet check of het formulier (goed) is ingevuld     -->
         <?php
+        session_start();
         if($_SESSION['logged_in'] = true && isset($_SESSION['gebruiker']))
         {
             header('Refresh: 3; url=/Webshop/index.php');
@@ -29,6 +30,7 @@
                 }
             }
         }
+        session_write_close();
         ?>
         <form class="form-horizontal" action="register.php" method="post">
             <div class="form-group">

@@ -25,6 +25,7 @@ function addCategorie($naam){
 <div class="block">
     <div class="container">
         <?php
+        session_start();
         if(!isset($_SESSION['gebruiker'])){
             header('Refresh: 3; url=/Webshop/index.php');
             echo 'Toegang geweigerd!';
@@ -36,6 +37,7 @@ function addCategorie($naam){
             echo 'Toegang geweigerd!';
             exit();
         }
+        session_write_close();
         ?>
         Beheerpagina Categoriën
     </div>

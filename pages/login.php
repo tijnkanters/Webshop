@@ -2,8 +2,6 @@
 <body>
 <?php include_once 'header.php'; ?>
 
-<div class="block">
-    <div class="container">
     	<div class="row">
     		<div class="col-md-4 col-md-offset-2">
                 <h1>Inloggen</h1>

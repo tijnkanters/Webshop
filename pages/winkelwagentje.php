@@ -1,10 +1,12 @@
 <?php include_once 'head.php'; ?>
 <body>
 <?php include_once 'header.php'; ?>
+<?php include_once '../class/product.inc.php'; ?>
 
 <div class="block">
     <div class="container">
         <?php
+        session_start();
         if(!isset($_SESSION['gebruiker'])){
             header('Refresh: 3; url=/Webshop/index.php');
             echo 'Je bent nog niet ingelogd';
@@ -12,10 +14,15 @@
         }
         ?>
         <div class="row">
-            Winkelwagentje
+            <h2>Winkelwagentje</h2>
 
+            <?php
+                if(count($_SESSION['cart']) == 0){
+                    echo "<p>Er zit nog niks in je winkelwagentje.</p>";
+                }
+            ?>
             <p>
-                <?php 
+                <?php
                 $cart = array();
                 $cart = $_SESSION['cart'];
                 
@@ -28,6 +35,7 @@
                 echo $c->price;
                 echo '</div><br>';
                 }
+                session_write_close();
                  ?>
             </p>
         </div>

@@ -9,6 +9,7 @@
 
 include '../class/databaseconnect.php';
 
+session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
@@ -42,20 +43,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
             header('Refresh: 3; url=/Webshop/index.php');
             echo 'Je bent succesvol ingelogd. Je wordt doorgestuurd.';
+            exit();
         }
         else
         {
             header('Refresh: 3; url=login.php');
             echo 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
-            echo "<br>".$sGebruiker;
-            echo "<br>".$sWachtwoord;
-            echo "<br>".$checkWachtwoord;
+            exit();
         }
     }
     else
     {
         header('Refresh: 3; url=login.php');
         echo 'Een vereist veld bestaat niet!';
+        exit();
     }
 }
 else
@@ -63,9 +64,9 @@ else
     header('Location: login.php');
     exit();
 }
+session_write_close();
 ?>
-
-        </div>
+    </div>
     </div>
 
 <?php include_once 'footer.php'; ?>
