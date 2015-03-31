@@ -6,7 +6,8 @@
 $product = getProduct($_GET['id']);
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    array_push($_SESSION['cart'], $_POST['productid']);
+    array_push($_SESSION['cart'], $product);
+    echo "<div class='productAdded'>".$product->name." toegevoegd aan de winkelwagen!</div>";
 }
 ?>
 
@@ -23,9 +24,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h2>&euro;<?php echo $product->price?>
                     <form action="product.php?id=<?php echo $product->id?>" method="post">
                         <input name="productid" type="hidden" value="<?php echo $product->id?>" />
-                        <input type="submit" name="submit" value="Add to Cart" />
+                        <button name="order" type="submit" class="btn btn-info pull-right ">In winkelwagen</button>
                     </form>
-                <button onclick="addProduct()" name="order" type="submit" class="btn btn-info pull-right ">In winkelwagen</button>
+
                 </h2>
             </div>
         </div>

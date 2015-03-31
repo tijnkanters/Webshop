@@ -39,6 +39,17 @@ body {
     color: #fff;
 }
 
+.productAdded{
+    text-align: center;
+    font-size: 24px;
+    background-color: #a4ff64;
+    padding: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    top: 0px;
+}
+
+
 .footer a {
     color: #fff;
     text-decoration: underline;
