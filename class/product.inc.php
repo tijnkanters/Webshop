@@ -13,7 +13,8 @@ class Product {
 
 
 function getProductsByCategory($catid){
-	include_once '../class/databaseconnect.php';
+	include_once 'databaseconnect.php';
+	
 	$products1 = array();
 	
 	$sql = "SELECT p.idProduct, p.Naam, p.Beschrijving, p.Prijs, p.Afbeelding, c.Naam as Categorie FROM trkanter_db.product AS p
@@ -37,12 +38,14 @@ function getProductsByCategory($catid){
 			 
 		}
 	}
+	$conn->close();
 	return $products1;
-	$conn.close();
+	
 }
 
 function getProduct($id){
-	include_once '../class/databaseconnect.php';
+	include_once 'databaseconnect.php';
+	
 	$products2 = array();
 	
 	$sql = "SELECT p.idProduct, p.Naam, p.Beschrijving, p.Prijs, p.Afbeelding, c.Naam as Categorie FROM trkanter_db.product AS p
@@ -55,7 +58,7 @@ function getProduct($id){
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
 			$prod = new Product();
-			;
+			
 			$prod->id = $row["idProduct"];
 			$prod->name = $row["Naam"];
 			$prod->desc = $row["Beschrijving"];
@@ -66,13 +69,13 @@ function getProduct($id){
 			 
 		}
 	}
-
+	$conn->close();
 	foreach ($products2 as $p){
 		if($p->id == $id){
 			return $p;
 		}
 	}
-	$conn.close();
+	
 }
 
 ?>

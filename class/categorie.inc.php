@@ -1,15 +1,35 @@
-<?php include_once '/class/databaseconnect.php'; ?>
+
 <?php
-$sql = "SELECT c.Naam FROM trkanter_db.categorie AS c";
+class Categorie {
+	public $id;
+	public $name;
+}
+
+function getCategories(){
+require_once 'databaseconnect.php';
+
+$categories = array();
+
+$sql = "SELECT c.idCategorie, c.Naam FROM trkanter_db.categorie AS c ORDER BY idCategorie;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
-    $rows = [];
-    while($row = mysqli_fetch_array($result))
-    {
-        $rows[] = $row;
-    }
+
+		while($row = $result->fetch_assoc()) {
+			$cat = new Categorie();
+			
+			$cat->id = $row["idCategorie"];
+			$cat->name = $row["Naam"];
+
+			array_push($categories, $cat);
+			 
+		}
+	}
+	$conn->close();
+	return $categories;
+
+
 }
-$conn->close();
+
+
 ?>

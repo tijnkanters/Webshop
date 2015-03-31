@@ -24,9 +24,22 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shop <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/Webshop/pages/shop.php?category=1">Heren</a></li>
-                        <li><a href="/Webshop/pages/shop.php?category=2">Dames</a></li>
-                        <li><a href="/Webshop/pages/shop.php?category=3">Kinderen</a></li>
+                    	<?php 
+                    	ini_set('display_errors', 'On');
+                    	error_reporting(E_ALL);
+                    	$path = $_SERVER['DOCUMENT_ROOT'];
+                    	$path .= "/Webshop/class/categorie.inc.php";
+                    	include_once($path);
+                    	
+                    	$catarray = array();
+                    	$catarray = getCategories();
+                    	foreach ($catarray as $c){
+                    		echo '<li><a href="/Webshop/pages/shop.php?category=' . $c->id . '">' . $c->name . '</a></li>';
+                    		
+                    	}
+                    	
+                    	?>
+                        
                     </ul>
                 </li>
 
