@@ -26,7 +26,9 @@
                     <ul class="dropdown-menu" role="menu">
                     	<?php 
 
-                    	include_once "/Webshop/class/categorie.inc.php";
+                    	$path = $_SERVER['DOCUMENT_ROOT'];
+                    	$path .= "/Webshop/class/categorie.inc.php";
+                    	include_once($path);
                     	
                     	$catarray = array();
                     	$catarray = getCategories();
