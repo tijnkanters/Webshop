@@ -3,25 +3,6 @@
 <?php include_once 'header.php'; ?>
 
 
-<?php
-if(isset($_REQUEST['add']))
-{
-	addCategorie();
-}
-
-function addCategorie($naam){
-	include 'databaseconnect.php';
-	
-	$sql = "INSERT INTO trkanter_db.categorie (id, x) VALUES ((SELECT dt.number FROM 
-			(SELECT max(idCategorie)+1 AS number FROM trkanter_db.categorie) 
-			AS dt), '" . $naam . "')";
-	
-	$conn->query($sql);
-}
-
-?>
-
-
 <div class="block">
     <div class="container">
         <?php
@@ -40,6 +21,11 @@ function addCategorie($naam){
         session_write_close();
         ?>
         Beheerpagina Categoriën
+        
+        <form action="../class/insertCategorie.php" method="post">
+		<input type="text" name="catname"/>
+		<input type="submit" name="add" value="add"/>
+</form>
     </div>
 </div>
 

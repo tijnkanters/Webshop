@@ -20,6 +20,15 @@
         session_write_close();
         ?>
         Beheerpagina Producten
+        
+        <form action="../class/insertProduct.php" method="post">
+		Naam:<input type="text" name="prodname"/><br>
+		Beschrijving:<input type="text" name="proddesc"/><br>
+		Image:<input type="text" name="prodimg"/><br>
+		Prijs:<input type="text" name="prodprice"/><br>
+		Categorie:<input type="text" name="prodcat"/><br>
+		<input type="submit" name="add" value="add"/>
+</form>
     </div>
 </div>
 
