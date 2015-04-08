@@ -19,15 +19,29 @@
         }
         session_write_close();
         ?>
-        Beheerpagina Producten
-        
+        <h2>Beheerpagina Producten</h2><br>
+
         <form action="../class/insertProduct.php" method="post">
-		Naam:<input type="text" name="prodname"/><br>
-		Beschrijving:<input type="text" name="proddesc"/><br>
-		Image:<input type="text" name="prodimg"/><br>
-		Prijs:<input type="text" name="prodprice"/><br>
-		Categorie:<input type="text" name="prodcat"/><br>
-		<input type="submit" name="add" value="add"/>
+        <table class="table">
+            <tr>
+                <td>Naam</td><td><input type="text" name="prodname"/></td>
+            </tr>
+            <tr>
+                <td>Beschrijving</td><td><input type="text" name="proddesc"/></td>
+            </tr>
+            <tr>
+                <td>Image</td><td><input type="text" name="prodimg"/></td>
+            </tr>
+            <tr>
+                <td>Prijs</td><td><input type="text" name="prodprice"/></td>
+            </tr>
+            <tr>
+                <td>Categorie</td><td><input type="text" name="prodcat"/></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="submit" name="add" value="add"/></td>
+            </tr>
+        </table>
 </form>
     </div>
 </div>
