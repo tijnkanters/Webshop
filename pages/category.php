@@ -33,10 +33,8 @@
                     	$catarray = getCategories();
                     	foreach ($catarray as $c){
                             if($c->parentid == null){
-                                echo "<a href='/Webshop/pages/shop.php?category=" . $c->id . "'><div class='category'>" . $c->name . "</div></a>";
+                                echo "<a href='/Webshop/pages/subcategory.php?category=" . $c->id . "'><div class='category'>" . $c->name . "</div></a>";
                             }
-
-
                     	}
                     	
                     	?>

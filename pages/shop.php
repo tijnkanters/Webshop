@@ -23,9 +23,6 @@
                $products = array();
 
                $products = getProductsByCategory($_GET['category'], $conn);
-               if(empty($products)){
-               	echo '<h3>Na erg veel speurwerk hebben we hier geen fietsbellen kunnen vinden.</h3>';
-}
 
                if(isset($_GET['search'])){
                    $products = getProductsBySearch($_GET['search']);

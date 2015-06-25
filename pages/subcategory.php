@@ -7,19 +7,22 @@
         <a href='/Webshop/index.php'>Home</a> -> Categorieën
     	<div class="row">
     		<div class="col-md-8 col-md-offset-2">
-                <h1>Selecteer een categorie:</h1>
+                <h1>Selecteer een subcategorie:</h1>
             </div>
         </div>
         <div class="row" style="margin-top:50px;">
     		<div class="col-md-6 col-md-offset-1" >
              <?php 
-
+                        $cat = $_GET['category'];
                     	include_once "../class/categorie.inc.php";
                     	
                     	$catarray = array();
                     	$catarray = getCategories();
                     	foreach ($catarray as $c){
-                    		echo "<a href='/Webshop/pages/shop.php?category=" . $c->id . "'><div class='category'>" . $c->name . "</div></a>";
+                            if($c->parentid == $cat){
+                                echo "<a href='/Webshop/pages/shop.php?category=" . $c->id . "'><div class='category'>" . $c->name . "</div></a>";
+                            }
+
                     		
                     	}
                     	
