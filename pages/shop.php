@@ -4,7 +4,8 @@
 
 <div class="block">
     <div class="container">
-
+        <?php include_once '../class/categorie.inc.php'; ?>
+        <a href='/Webshop/index.php'>Home</a> -> <a href='/Webshop/pages/category.php'>Categorieën</a> -> <?php echo getCategorie($_GET['category'])->name ?>
     		<div class="col-md-10-offset-2">
                 <h1>Shop</h1>
                 

@@ -4,6 +4,7 @@
 
 <div class="block">
     <div class="container">
+        <a href='/Webshop/index.php'>Home</a> -> Categorieën
     	<div class="row">
     		<div class="col-md-8 col-md-offset-2">
                 <h1>Selecteer een categorie:</h1>

@@ -28,6 +28,27 @@ if ($result->num_rows > 0) {
 	return $categories;
 }
 
+function getCategorie($id){
+    include 'databaseconnect.php';
+
+    $sql = "SELECT c.idCategorie, c.Naam FROM trkanter_db.categorie AS c WHERE c.idCategorie = " . $id . " ORDER BY idCategorie;";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+
+        while($row = $result->fetch_assoc()) {
+            $categorie = new Categorie();
+
+            $categorie->id = $row["idCategorie"];
+            $categorie->name = $row["Naam"];
+
+
+        }
+    }
+    $conn->close();
+    return $categorie;
+}
+
 
 
 

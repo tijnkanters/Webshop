@@ -4,6 +4,7 @@
 
 <div class="block">
     <div class="container">
+        <a href='/Webshop/index.php'>Home</a> -> About
     	<div class="row">
     		<div class="col-md-4 col-md-offset-2">
                 <h1>About</h1>
