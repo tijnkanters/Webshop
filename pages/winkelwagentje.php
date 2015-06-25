@@ -41,7 +41,9 @@
                 $productcounter = 0;
 
                 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    unset($cart[$_POST['product']]);
+                    if(isset($_POST['product'])) {
+                        unset($cart[$_POST['product']]);
+                    }
                     $filteredCart = array_values( array_filter($cart) );
                     $cart = $filteredCart;
                     $_SESSION['cart'] = $cart;
