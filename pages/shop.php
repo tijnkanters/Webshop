@@ -4,32 +4,49 @@
 
 <div class="block">
     <div class="container">
-        <?php include_once '../class/categorie.inc.php'; ?>
-        <a href='/Webshop/index.php'>Home</a> -> <a href='/Webshop/pages/category.php'>Categorieën</a> -> <?php echo getCategorie($_GET['category'])->name ?>
+        <?php
+        if(isset($_GET['category'])){
+        include_once '../class/categorie.inc.php';
+        echo "<a href='/Webshop/index.php'>Home</a> -> <a href='/Webshop/pages/category.php'>Shop</a> -> " . getCategorie($_GET['category'])->name;
+        }
+        else if (isset($_GET['search'])) {
+            echo "<a href='/Webshop/index.php'>Home</a> -> <a href='/Webshop/pages/category.php'>Shop</a> -> Zoekresultaten voor '" . $_GET['search'] . "'";
+        }
+        else if (!isset($_GET['category']) && !isset($_GET['search'])) {
+            echo "Error!";
+        }
+        ?>
     		<div class="col-md-10-offset-2">
                 <h1>Shop</h1>
                 
                <?php include_once '../class/product.inc.php';
                $products = array();
-               $products = getProductsByCategory($_GET['category']);
-               if(empty($products)){
-               	echo '<h3>Na erg veel speurwerk hebben we hier geen fietsbellen kunnen vinden.
-                		</h3><p>Er is iets mis gegaan. Klik <a href="/Webshop/index.php">hier</a> om terug te gaan.</p>';
+
+               if(isset($_GET['search'])){
+                   $products = getProductsBySearch($_GET['search']);
                }
-				foreach ($products as $p){
-					echo '<div class="col-md-5 productDiv">';
-					echo '<a href="product.php?id=' . $p->id . '">';
-					echo '<br>';
-					echo '<img src="/Webshop/img/' . $p->img . '" style="width: 100px; height: 100px; border:3px solid gray;">';
-					
-					echo '<h3>' . $p->name . '</h3>';
-					
-					echo '<p>' . $p->desc . '</p>';
-					echo '<h4>&euro;' . $p->price . '</h4>';
-					echo '<br>';
-					echo '</a></div>';
-					
-				}
+               else {
+                   $products = getProductsByCategory($_GET['category']);
+               }
+                   if (empty($products)) {
+                       echo '<h3>Na erg veel speurwerk hebben we hier geen fietsbellen kunnen vinden.
+                		</h3><p>Er is iets mis gegaan. Klik <a href="/Webshop/index.php">hier</a> om terug te gaan.</p>';
+                   }
+                   foreach ($products as $p) {
+                       echo '<div class="col-md-5 productDiv">';
+                       echo '<a href="product.php?id=' . $p->id . '">';
+                       echo '<br>';
+                       echo '<img src="/Webshop/img/' . $p->img . '" style="width: 100px; height: 100px; border:3px solid gray;">';
+
+                       echo '<h3>' . $p->name . '</h3>';
+
+                       echo '<p>' . $p->desc . '</p>';
+                       echo '<h4>&euro;' . $p->price . '</h4>';
+                       echo '<br>';
+                       echo '</a></div>';
+
+
+               }
 				?>
             </div>
       </div>

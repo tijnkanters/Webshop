@@ -9,7 +9,7 @@ class Product {
 }
 
 
-function getProductsByCategory($catid, $conn){
+function getProductsByCategory($catid){
 	include 'databaseconnect.php';
 	
 	$products1 = array();
@@ -39,7 +39,36 @@ function getProductsByCategory($catid, $conn){
 	
 }
 
-function getProduct($id, $conn){
+function getProductsBySearch($search){
+    include 'databaseconnect.php';
+
+    $products3 = array();
+
+    $sql = "SELECT p.idProduct, p.Naam, p.Beschrijving, p.Prijs, p.Afbeelding, c.Naam as Categorie FROM trkanter_db.product as p JOIN trkanter_db.categorie AS c on p.Categorie_idCategorie = c.idCategorie WHERE p.Naam like '%". $search ."%';";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $prod = new Product();
+            ;
+            $prod->id = $row["idProduct"];
+            $prod->name = $row["Naam"];
+            $prod->desc = $row["Beschrijving"];
+            $prod->price = $row["Prijs"];
+            $prod->img = $row["Afbeelding"];
+            //$prod->category = $row["Categorie"];
+            array_push($products3, $prod);
+
+        }
+    }
+    $conn->close();
+    return $products3;
+
+}
+
+function getProduct($id){
 	include 'databaseconnect.php';
 	
 	$products2 = array();
