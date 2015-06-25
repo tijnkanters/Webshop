@@ -10,7 +10,7 @@
                 <h1>Geef een zoekterm:</h1>
             </div>
         </div>
-        <div class="row" style="margin-bottom:20px;">
+        <div class="row" style="margin-bottom:30px;">
             <div class="col-md-6 col-md-offset-1" >
                 <form action="/Webshop/pages/shop.php" method="get">
                     <input type="text" name="search"/>
