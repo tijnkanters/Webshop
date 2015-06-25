@@ -4,8 +4,8 @@
 <div class="block">
     <div class="container">
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+//error_reporting(E_ALL);
+//ini_set('display_errors', TRUE);
 
 include '../class/databaseconnect.php';
 
@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         }
         else{
             echo 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist! (GEBRUIKER NIET GEVONDEN)';
-            echo $conn->error;
+            //echo $conn->error;
             echo $sql;
             exit();
         }
@@ -43,12 +43,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
             header('Refresh: 3; url=/Webshop/index.php');
             echo 'Je bent succesvol ingelogd. Je wordt doorgestuurd.';
+            echo 'Gebeurt er niets, klik dan <a href="/Webshop/index.php">hier</a>.';
             exit();
         }
         else
         {
             header('Refresh: 3; url=login.php');
             echo 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
+            echo '<a href="login.php"> - Terug naar login -</a>';
             exit();
         }
     }
