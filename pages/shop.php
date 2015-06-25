@@ -11,7 +11,7 @@
                 
                <?php include_once '../class/product.inc.php';
                $products = array();
-               $products = getProductsByCategory($_GET['category']);
+               $products = getProductsByCategory($_GET['category'], $conn);
                if(empty($products)){
                	echo '<h3>Na erg veel speurwerk hebben we hier geen fietsbellen kunnen vinden.
                 		</h3><p>Er is iets mis gegaan. Klik <a href="/Webshop/index.php">hier</a> om terug te gaan.</p>';

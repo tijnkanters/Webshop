@@ -7,7 +7,7 @@ class Product {
 	public $img;
 	public $category;
 }
-
+include '../class/databaseconnect.php';
 
 function getProductsByCategory($catid, $conn){
 	include 'databaseconnect.php';

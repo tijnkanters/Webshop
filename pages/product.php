@@ -3,7 +3,7 @@
 <?php include_once 'header.php'; ?>
 
 <?php include_once '../class/product.inc.php'; 
-$product = getProduct($_GET['id']);
+$product = getProduct($_GET['id'], $conn);
 
 session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST') {

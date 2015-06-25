@@ -9,7 +9,7 @@ include 'databaseconnect.php';
 
 $categories = array();
 
-$sql = "SELECT c.idCategorie, c.Naam FROM trkanter_db.categorie AS c ORDER BY idCategorie;";
+$sql = "SELECT c.idCategorie, c.Naam, c.idParent FROM trkanter_db.categorie AS c ORDER BY idCategorie;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -19,6 +19,7 @@ if ($result->num_rows > 0) {
 			
 			$cat->id = $row["idCategorie"];
 			$cat->name = $row["Naam"];
+            $cat->parentid = $row["idParent"];
 
 			array_push($categories, $cat);
 			 
